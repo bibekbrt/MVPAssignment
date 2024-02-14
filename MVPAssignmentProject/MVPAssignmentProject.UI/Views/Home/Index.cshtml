@@ -1,0 +1,93 @@
+﻿@model MVPAssignmentProject.Domain.Dto.PropertySearch
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="content-wrapper" style="margin-top:30px;">
+    <section class="content-header">
+        <div class="container-fluid">
+
+        </div><!-- /.container-fluid -->
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    @using (Ajax.BeginForm("ReportSearch", "Home", new AjaxOptions
+                    {
+                        HttpMethod = "POST",
+                        InsertionMode = InsertionMode.Replace,
+                        UpdateTargetId = "DetailsReportsID",
+                        LoadingElementId = "loader"
+                    }))
+                    {
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>Property Type</label>
+                                @Html.DropDownListFor(model => model.PropertyTypeId, MVPAssignmentProject.UI.Helpers.GetPropertyStatusDd(), new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-3">
+                                <label>Price From</label>
+                                @Html.EditorFor(model => model.PriceFrom, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                            <div class="col-md-3">
+                                <label>Price To</label>
+                                @Html.EditorFor(model => model.PriceTo, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                            <div class="col-md-3">
+                                <label>Location</label>
+                                @Html.EditorFor(model => model.PropertyLocation, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                            <div class="col-md-3">
+                                <label>&nbsp;</label>
+                                <button type="submit" class="btn btn-success btn-sm form-control">
+                                    <i class="fa-solid fa-floppy-disk"></i> Search
+                                </button>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+
+                <div class="col-lg-12" style="margin-top:30px;" id="DetailsReportsID">
+                    <div class="row">
+
+                        @foreach (var item in Model.PropertySearchList)
+                        {
+                            <div class="col-lg-4">
+                                <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                                    <img src="data:image/jpeg;base64,@Convert.ToBase64String(item.PropertyImage)" class="card-img-top" alt="Image" width="100" height="100" />
+
+                                    <div class="card-body">
+                                        <h5 class="card-title">@item.PropertyTypeName</h5>
+                                        <p class="card-text">@item.PropertyDescription</p>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Price : @item.PropertyPrice</h5>
+                                        <p class="card-text">Location : @item.PropertyLocation</p>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Broker Name : @item.BrokerName</h5>
+                                        <h5 class="card-title">Broker Address : @item.BrokerAddress</h5>
+                                        <h5 class="card-title">Broker Contact : @item.BrokerContact</h5>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        }
+
+                    </div>
+                </div>
+
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </section>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+}

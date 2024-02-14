@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MVPAssignmentProject.Domain.Model.PropertyTypes>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DisplayStatus)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DisplayStatus)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PropertyTypeId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PropertyTypeId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PropertyTypeId })
+        </td>
+    </tr>
+}
+
+</table>

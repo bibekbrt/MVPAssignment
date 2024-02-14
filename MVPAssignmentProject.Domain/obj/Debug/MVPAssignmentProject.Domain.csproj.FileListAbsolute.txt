@@ -1,0 +1,6 @@
+D:\Tobedeleted\ngproject\backend\Assignment\MVPAssignmentProject.Domain\bin\Debug\MVPAssignmentProject.Domain.dll
+D:\Tobedeleted\ngproject\backend\Assignment\MVPAssignmentProject.Domain\bin\Debug\MVPAssignmentProject.Domain.pdb
+D:\Tobedeleted\ngproject\backend\Assignment\MVPAssignmentProject.Domain\obj\Debug\MVPAssignmentProject.Domain.csproj.AssemblyReference.cache
+D:\Tobedeleted\ngproject\backend\Assignment\MVPAssignmentProject.Domain\obj\Debug\MVPAssignmentProject.Domain.csproj.CoreCompileInputs.cache
+D:\Tobedeleted\ngproject\backend\Assignment\MVPAssignmentProject.Domain\obj\Debug\MVPAssignmentProject.Domain.dll
+D:\Tobedeleted\ngproject\backend\Assignment\MVPAssignmentProject.Domain\obj\Debug\MVPAssignmentProject.Domain.pdb
