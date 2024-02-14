@@ -1,0 +1,10 @@
+There are 4 projects in given assignment application.
+1. MVPAssignmentProject.UI
+	This is main project which work as Rendering Views, User Input Handling, Presentation Logic and Interaction with Domain Layer.
+2. MVPAssignmentProject.Infrastructure
+	In this Layer, Data Access, External Interfaces, Frameworks and Libraries and Configuration are mention. This involves tasks such as data persistence, querying, and mapping between domain objects and database structures.
+3. MVPAssignmentProject.Domain
+	All Data model, entities are created here.
+4. MVPAssignmentProject.API
+	This layer is for exposing API End points
+Currently, I have only implemented broker registration and login module. After login, broker can insert property details well as property type. All properties inserted by brokers are visible on the homepage. A stored procedure is used for property searches.
